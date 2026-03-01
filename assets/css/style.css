@@ -1,0 +1,423 @@
+/* ==================== VARIABLES CSS ==================== */
+:root {
+    --primary-color: #0d6efd;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --text-color: #333;
+    --transition: all 0.3s ease;
+}
+
+/* ==================== RESET ET BASE ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--primary-color) !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin-left: 1rem;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero-section {
+    background: linear-gradient(135deg, var(--dark-color) 0%, #1a1a2e 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 400px;
+    background: rgba(13, 110, 253, 0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+.hero-section h1 {
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+    animation: slideInDown 0.8s ease;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.hero-section .btn-primary {
+    padding: 12px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: var(--transition);
+    animation: slideInUp 0.8s ease 0.2s backwards;
+}
+
+.hero-section .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(13, 110, 253, 0.3);
+}
+
+/* ==================== FADE-IN ANIMATION ==================== */
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Les enfants s'animent avec délai */
+.fade-in:nth-child(1) { animation-delay: 0.1s; }
+.fade-in:nth-child(2) { animation-delay: 0.2s; }
+.fade-in:nth-child(3) { animation-delay: 0.3s; }
+.fade-in:nth-child(4) { animation-delay: 0.4s; }
+.fade-in:nth-child(5) { animation-delay: 0.5s; }
+.fade-in:nth-child(6) { animation-delay: 0.6s; }
+
+/* ==================== ANIMATIONS KEYFRAMES ==================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== ABOUT SECTION ==================== */
+#about h2,
+#skills h2,
+#projects h2,
+#contact h2 {
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    
+}
+
+#about h2::after,
+#skills h2::after,
+#projects h2::after,
+#contact h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 0.5rem auto 0;
+}
+
+#about img {
+    max-width: 250px;
+    transition: var(--transition);
+    border: 5px solid var(--light-color);
+}
+
+#about img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================== SKILLS SECTION ==================== */
+#skills {
+    background-color: white;
+}
+
+#skills-container .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#skills h5 {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--dark-color);
+}
+
+.progress {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--primary-color), #0b5ed7);
+    font-weight: 600;
+    color: white;
+}
+
+/* ==================== PROJECTS SECTION ==================== */
+#projects {
+    background-color: var(--light-color);
+}
+
+#projects-container {
+    margin-top: 2rem;
+}
+
+.project-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15) !important;
+}
+
+.project-card img {
+    height: 250px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-card .card-title {
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.project-card .card-text {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.project-card .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.project-card .btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0b5ed7;
+    transform: translateX(3px);
+}
+
+.project-card .btn-outline-secondary {
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.project-card .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+/* ==================== CONTACT SECTION ==================== */
+#contact {
+    background-color: white;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-control,
+.form-control:focus {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.form-control.is-invalid:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.btn-lg {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(13, 110, 253, 0.3);
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background-color: var(--dark-color);
+    border-top: 3px solid var(--primary-color);
+    margin-top: 5rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    #about .row {
+        text-align: center;
+    }
+
+    #about img {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    #skills-container .col-md-6 {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #skills h5 {
+        margin-bottom: 0;
+        min-width: 100px;
+    }
+
+    .progress {
+        height: 20px !important;
+    }
+
+    .project-card {
+        margin-bottom: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .nav-link {
+        margin-left: 0 !important;
+        padding: 0.5rem 0 !important;
+    }
+}
+
+/* ==================== VALIDATION FEEDBACK ==================== */
+.invalid-feedback {
+    display: block;
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.alert {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* ==================== SCROLLBAR CUSTOM (OPTIONAL) ==================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0b5ed7;
+}
