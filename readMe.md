@@ -76,8 +76,9 @@ SoftwavePortifolio/
 - Un navigateur web moderne (Chrome, Firefox, Safari, Edge)
 - Aucun serveur requis (site statique)
 
+### Accessible en ligne 
+https://softwave-portifolio.vercel.app
 ### Installation Locale
-
 1. **Cloner le dépôt**
 
 ```bash
